@@ -336,7 +336,20 @@ body {
 }
 
 .our__goals {
+    position: relative;
     margin-top: 205px
+}
+
+.our__goals::before {
+    content: '';
+    background: url('../images/neon-bgblur.png') no-repeat;
+    background-size: 550px;
+    position: absolute;
+    top: 25%;
+    left: 15%;
+    width: 550px;
+    height: 550px;
+    z-index: -5;
 }
 
 .our__goals-name {
@@ -359,7 +372,8 @@ body {
 }
 
 .sliders {
-    position: relative
+    position: relative;
+    width:  90%;
 }
 
 .button__prev {
@@ -381,34 +395,15 @@ body {
     cursor: pointer;
 }
 
-.slider::before {
-    content: '';
-    background: -webkit-gradient(linear, left top, left bottom, from(#FC50B7), to(#FF08AB));
-    background: -o-linear-gradient(top, #FC50B7 0%, #FF08AB 100%);
-    background: linear-gradient(180deg, #FC50B7 0%, #FF08AB 100%);
-    -webkit-filter: blur(100px);
-    filter: blur(100px);
-    position: absolute;
-    top: 25%;
-    left: 20%;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    z-index: -5;
-    opacity: 0.4
-}
-
 .slider__slide {
-    height: 430px;
-    width: 95%;
-    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
     backdrop-filter: blur(80px);
     border-radius: 20px;
-    border: 1px solid rgb(238, 231, 231);
-    background: rgba(255, 255, 255, 0.438);
+    border: 2px solid rgba(238, 231, 231, 0.8);
+    background: rgba(255, 255, 255, 0.1);
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    -webkit-backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(10px);
     text-align: center;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -441,19 +436,19 @@ body {
     font-size: 18px;
     font-weight: 700;
     line-height: 22px;
+    margin-bottom: 5px;
     letter-spacing: 0.0007em;
     text-align: left;
     color: #12273C
 }
 
 .slider__slide-item-p {
-    width: 280px;
     font-size: 16px;
     font-weight: 400;
     line-height: 23px;
     letter-spacing: 0.0043em;
     text-align: left;
-    color: #00000099
+    color: rgba(0, 0, 0, 0.6);
 }
 
 
@@ -467,7 +462,7 @@ body {
 }
 
 .statistic__content {
-    margin-top: 266px;
+    margin-top: 206px;
     text-align: center
 }
 
@@ -555,6 +550,19 @@ body {
     margin-top: 108px;
     position: relative;
     font-family: "Objektiv"
+}
+
+.how::before {
+    content: '';
+    background: url('../images/neon-bgblur.png') no-repeat;
+    background-size: 550px;
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 550px;
+    height: 550px;
+    z-index: -5;
+    opacity: 0.5;
 }
 
 .how-name {
@@ -651,8 +659,23 @@ body {
 .works__slide-item {}
 
 .leader {
+    position: relative;
     margin-top: 178px
 }
+
+.leader::before {
+    content: '';
+    background: url('../images/neon-bgblur.png') no-repeat;
+    background-size: 550px;
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    width: 550px;
+    height: 550px;
+    z-index: -5;
+    opacity: 0.7;
+}
+
 
 .leader-name {
     font-size: 48px;
@@ -687,23 +710,6 @@ body {
 
 .leader__wall-right {
     margin-left: 30px
-}
-
-.leader__wall-right::before {
-    content: '';
-    background: -webkit-gradient(linear, left top, left bottom, from(#FC50B7), to(#FF08AB));
-    background: -o-linear-gradient(top, #FC50B7 0%, #FF08AB 100%);
-    background: linear-gradient(180deg, #FC50B7 0%, #FF08AB 100%);
-    -webkit-filter: blur(100px);
-    filter: blur(100px);
-    position: absolute;
-    top: 10%;
-    left: 30%;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    z-index: -5;
-    opacity: 0.3
 }
 
 .leader__wall-h3 {
@@ -1059,7 +1065,7 @@ body {
 
 @media (max-width: 1440px) {
     .container {
-        max-width: 95%;
+        max-width: 1250px;
     }
 
     .works__content-info {
@@ -1085,7 +1091,7 @@ body {
     }
 
     .statistic__content {
-        margin-top: 150px;
+        margin-top: 105px;
     }
 }
 
@@ -1315,10 +1321,6 @@ body {
     .header__content-info {
         margin-right: 30px;
         margin-top: 20px;
-    }
-
-    .slider__slide-item-p {
-        width: 200px;
     }
 
     .works__content-info {
