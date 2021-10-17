@@ -180,7 +180,7 @@ $(document).ready(function(){
   loadLeaderboard(leaderboardVotes, leaderboardVotesURL);
 
   const statsChart = $('.stats-datechart');
-  const statsURL = 'http://127.0.0.1:8010/stats/clips';
+  const statsURL = 'http://104.248.26.69:8010/stats/clips';
   drawChart(statsChart, statsURL);
 
 });
