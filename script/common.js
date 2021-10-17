@@ -172,15 +172,15 @@ $(document).ready(function(){
   }
 
   const leaderboardClips = $('.leaderboard-list-clips');
-  const leaderboardClipsURL = 'http://104.248.26.69/leaderboard/clips';
+  const leaderboardClipsURL = 'https://api.ry.team/leaderboard/clips';
   loadLeaderboard(leaderboardClips, leaderboardClipsURL);
 
   const leaderboardVotes = $('.leaderboard-list-votes');
-  const leaderboardVotesURL = 'http://104.248.26.69/leaderboard/votes';
+  const leaderboardVotesURL = 'https://api.ry.team/leaderboard/votes';
   loadLeaderboard(leaderboardVotes, leaderboardVotesURL);
 
   const statsChart = $('.stats-datechart');
-  const statsURL = 'http://104.248.26.69/stats/clips';
+  const statsURL = 'https://api.ry.team/stats/clips';
   drawChart(statsChart, statsURL);
 
 });
