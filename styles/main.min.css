@@ -664,7 +664,8 @@ linear-gradient(0deg, #8D53FD, #8D53FD);
 
 .leader {
     position: relative;
-    margin-top: 178px
+    margin-top: 178px;
+    margin-bottom: 78px
 }
 
 .leader::before {
@@ -721,6 +722,11 @@ linear-gradient(0deg, #8D53FD, #8D53FD);
     font-weight: 700;
     line-height: 32px;
     color: #374151
+}
+
+.leaderboard-list {
+    min-height: 100px;
+    margin-bottom: 20px;
 }
 
 .leader__wall-block {
