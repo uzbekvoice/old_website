@@ -873,7 +873,7 @@ body {
 }
 
 .partners {
-    margin-bottom: 195px
+    margin-bottom: 105px
 }
 
 .partners__h3 {
@@ -896,7 +896,7 @@ body {
     width: 800px;
     margin: 0 auto
 }
-
+.partners
 .partners__catalog {
     max-height: 390px;
     display: -webkit-box;
@@ -909,10 +909,6 @@ body {
     -ms-flex-pack: justify;
     justify-content: space-between;
     height: 80%;
-}
-
-.partners :nth-child(4) {
-    width: 120px
 }
 
 .partners__catalog img {

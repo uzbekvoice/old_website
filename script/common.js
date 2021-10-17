@@ -63,7 +63,7 @@ $('.slider__works').slick({
 $('.partners__catalog').slick({
   infinite: true,
   speed: 300,
-  slidesToShow: 3,
+  slidesToShow: 4,
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 2000,
