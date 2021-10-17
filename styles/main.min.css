@@ -1060,6 +1060,9 @@ body {
 }
 
 @media (max-width: 1440px) {
+    .container {
+        max-width: 992px;
+    }
     .works__content-info {
         height: 300px;
     }
