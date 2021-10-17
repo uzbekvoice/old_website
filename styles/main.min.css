@@ -208,13 +208,12 @@ body {
 
 
 .header .menu__list-links:last-of-type {
-    background: -o-linear-gradient(126.23deg, #8D53FD -1.4%, #B38CFF 95.18%);
-    background: linear-gradient(323.77deg, #8D53FD -1.4%, #B38CFF 95.18%);
-    -webkit-box-shadow: 0px 8px 32px rgba(141, 83, 253, 0.24);
+    background: linear-gradient(9deg, #8D53FD -1.4%, #B38CFF 95.18%),
+linear-gradient(0deg, #8D53FD, #8D53FD);
     box-shadow: 0px 8px 32px rgba(141, 83, 253, 0.24);
     border-radius: 12px;
     color: white;
-    padding: 13px 24px;
+    padding: 12px 24px;
 }
 
 .header .menu__list-links:hover:last-of-type {
@@ -287,10 +286,9 @@ body {
 
 .header__content-text-btn {
     color: white;
-    padding: 21px 24px;
-    background: -o-linear-gradient(126.23deg, #8D53FD -1.4%, #B38CFF 95.18%);
-    background: linear-gradient(323.77deg, #8D53FD -1.4%, #B38CFF 95.18%);
-    -webkit-box-shadow: 0px 8px 32px rgba(141, 83, 253, 0.24);
+    padding: 16px 24px;
+    background: linear-gradient(9deg, #8D53FD -1.4%, #B38CFF 95.18%),
+linear-gradient(0deg, #8D53FD, #8D53FD);
     box-shadow: 0px 8px 32px rgba(141, 83, 253, 0.24);
     border-radius: 12px;
     font-size: 22px
@@ -596,15 +594,15 @@ body {
 
 .how__btn {
     color: white;
-    padding: 21px 24px;
-    background: -o-linear-gradient(126.23deg, #8D53FD -1.4%, #B38CFF 95.18%);
-    background: linear-gradient(323.77deg, #8D53FD -1.4%, #B38CFF 95.18%);
-    -webkit-box-shadow: 0px 8px 32px rgba(141, 83, 253, 0.24);
+    padding: 16px 24px;
+    background: linear-gradient(9deg, #8D53FD -1.4%, #B38CFF 95.18%),
+linear-gradient(0deg, #8D53FD, #8D53FD);
     box-shadow: 0px 8px 32px rgba(141, 83, 253, 0.24);
     border-radius: 12px;
     font-size: 22px;
     display: inline-block;
     margin-top: 80px;
+    letter-spacing: 0.0043em;
 }
 
 .how__btn:hover {
@@ -860,13 +858,11 @@ body {
     line-height: 22px;
     letter-spacing: 0.0043em;
     color: white;
-    background: -o-linear-gradient(126.23deg, #8D53FD -1.4%, #B38CFF 95.18%), #8D53FD;
-    background: linear-gradient(323.77deg, #8D53FD -1.4%, #B38CFF 95.18%), #8D53FD;
-    mix-blend-mode: normal;
-    -webkit-box-shadow: 0px 8px 32px rgba(141, 83, 253, 0.24);
+    background: linear-gradient(9deg, #8D53FD -1.4%, #B38CFF 95.18%),
+linear-gradient(0deg, #8D53FD, #8D53FD);
     box-shadow: 0px 8px 32px rgba(141, 83, 253, 0.24);
     border-radius: 12px;
-    padding: 21px 24px
+    padding: 16px 24px
 }
 
 .more__info-link:hover {
