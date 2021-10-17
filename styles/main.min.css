@@ -526,8 +526,17 @@ linear-gradient(0deg, #8D53FD, #8D53FD);
 }
 
 .statistic__img-file {
-    height: 389px;
-    width: 618px
+    height: 389px !important;
+    width: 618px !important;
+    background: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid rgba(238, 231, 231, 0.8);
+}
+.statistic__img-file canvas,
+.statistic__img-file img {
+    height: 100%;
+    width:  100%;
 }
 
 .statistic__img::before {

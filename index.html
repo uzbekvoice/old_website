@@ -147,10 +147,13 @@
               </div>
             </div>
             <div class="statistic__img">
-              <img
-                class="statistic__img-file"
-                src="images/statistic1.png"
-              /><img class="statistic__img-file" src="images/statistic2.png" />
+              <div class="statistic__img-file">
+                <img src="images/statistic1.png" />
+              </div>
+              <div class="statistic__img-file stats-datechart">
+                <img src="styles/loading.svg" class="ajax-loader">
+                <canvas id="myChart" style="display: none"></canvas>
+              </div>
             </div>
           </div>
         </div>
@@ -354,6 +357,8 @@
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+    <script src="./script/moment.js"></script>
     <script src="./script/slick.min.js"></script>
     <script src="./script/common.js"></script>
   </body>
