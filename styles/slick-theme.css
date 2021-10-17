@@ -89,10 +89,14 @@
 }
 .slick-prev:before
 {
-    content: '←';
+    content: '';
+    background-image: url('../images/arrow-left.png');
     color: black;
     width: 45px;
     height: 45px;
+    display: inline-block;
+    z-index: 9999;
+
 }
 [dir='rtl'] .slick-prev:before
 {
@@ -107,14 +111,16 @@
 [dir='rtl'] .slick-next
 {
     right: auto;
-    left: -55px;
+    left: -15px;
 }
 .slick-next:before
 {
-    content: '→';
+    content: '';
+    background-image: url('../images/arrow-right.png');
     color: black;
     width: 45px;
     height: 45px;
+    display: inline-block;
     
 }
 [dir='rtl'] .slick-next:before
