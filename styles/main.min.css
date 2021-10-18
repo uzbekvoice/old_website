@@ -526,8 +526,8 @@ linear-gradient(0deg, #8D53FD, #8D53FD);
 }
 
 .statistic__img-file {
-    height: 389px !important;
-    width: 618px !important;
+    height: 389px;
+    width: 618px;
     background: #fff;
     padding: 20px;
     border-radius: 20px;
@@ -1206,7 +1206,7 @@ linear-gradient(0deg, #8D53FD, #8D53FD);
     }
 
     .header__burger {
-        display: block
+        display: none
     }
 
     .header__content-text-h1 {
@@ -1225,6 +1225,13 @@ linear-gradient(0deg, #8D53FD, #8D53FD);
         line-height: 22px;
         letter-spacing: 0em;
         text-align: left
+    }
+
+    .how::before,
+    .leader::before,
+    .our__goals::before {
+        max-width: 300px;
+        background-size: 300px;
     }
 
     .leader-p {
