@@ -1,5 +1,7 @@
 @charset 'UTF-8';
 /* Slider */
+
+
 .slick-loading .slick-list
 {
     background: #fff url('./loading.svg') center center no-repeat;
@@ -27,19 +29,16 @@
 
     display: block;
 
-    width: 20px;
-    height: 20px;
+    width: 56px;
+    height: 56px;
     padding: 0;
-    -webkit-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    transform: translate(0, -50%);
+
+    background: url(../images/arrow-left.png) no-repeat; 
+    background-size: 56px;
 
     cursor: pointer;
-
-    color: transparent;
     border: none;
     outline: none;
-    background: transparent;
 }
 .slick-prev:hover,
 .slick-prev:focus,
@@ -48,38 +47,11 @@
 {
     color: transparent;
     outline: none;
-    background: transparent;
+    opacity: 0.8;
 }
-.slick-prev:hover:before,
-.slick-prev:focus:before,
-.slick-next:hover:before,
-.slick-next:focus:before
-{
-    opacity: 1;
-}
-.slick-prev.slick-disabled:before,
-.slick-next.slick-disabled:before
-{
-    opacity: .25;
-}
-
-.slick-prev:before,
-.slick-next:before
-{
-    font-family: 'slick';
-    font-size: 20px;
-    line-height: 1;
-
-    opacity: .75;
-    color: white;
-
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
 .slick-prev
 {
-    left: -30px;
+    left: -60px;
    
 }
 [dir='rtl'] .slick-prev
@@ -88,48 +60,17 @@
     left: auto;
 
 }
-.slick-prev:before
-{
-    content: '←';
-    width: 32px;
-    height: 32px;
-    display: inline-block;
-    background-image: url(../images/arrow-left.png); 
-    border-radius: 50%;    
-    padding-right: 5px;
-    padding-bottom: 5px;
-}
-[dir='rtl'] .slick-prev:before
-{
-    content: '→';
-    
-}
 
 .slick-next
 {
-    right: -30px;
+    right: -60px;
+    background-image: url(../images/arrow-right.png); 
    
 }
 [dir='rtl'] .slick-next
 {
     right: auto;
     left: 0px;
-}
-.slick-next:before
-{
-    content: '→';
-    width: 32px;
-    height: 32px;
-    display: inline-block;
-    background-image: url(../images/arrow-right.png);
-    padding: 0;
-    border-radius: 50%;    
-    padding-right: 3px;
-    padding-bottom: 2px;
-}
-[dir='rtl'] .slick-next:before
-{
-    content: '←';
 }
 
 /* Dots */
@@ -220,4 +161,31 @@
 {
     opacity: .75;
     color: black;
+}
+
+
+@media (max-width: 992px) {
+    .slick-slider {
+        width:  85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .slick-prev,
+    .slick-next {
+        width:  35px;
+        height: 35px;
+        background-size: 35px;
+    }
+
+    .slick-prev
+    {
+        left: -40px;
+       
+    }
+    .slick-next
+    {
+        right: -40px;
+       
+    }
 }

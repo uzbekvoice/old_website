@@ -1230,8 +1230,8 @@ linear-gradient(0deg, #8D53FD, #8D53FD);
     .how::before,
     .leader::before,
     .our__goals::before {
-        max-width: 300px;
-        background-size: 300px;
+        max-width: 250px;
+        background-size: 250px;
     }
 
     .leader-p {
