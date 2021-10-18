@@ -1,3 +1,19 @@
+/* Burger Start */
+
+let btn = document.querySelector('.header__burger')
+let list = document.querySelector('.menu__list')
+let closeList = document.querySelector('.header__close')
+
+
+btn.addEventListener('click', () => {
+  list.style.transform = 'translate(0)'
+})
+
+closeList.addEventListener('click', () => {
+  list.style.transform = 'translate(-100%)'
+})
+
+/* Burger End */
 
 $('.slider').slick({
   infinite: true,
