@@ -809,7 +809,90 @@ body {
     margin-bottom: 220px;
     -webkit-transition: color 0.5s ease;
     -o-transition: color 0.5s ease;
-    transition: color 0.5s ease
+    transition: color 0.5s ease;
+    cursor: pointer;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background: #fff;
+    height: 810px;
+    width: 964px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    display: none;
+}
+
+.modal__overlay {
+    position: absolute;
+    top: -50%;
+    left: 0;
+    bottom: -50%;
+    right: 0;
+    background: rgba(128, 128, 128, 0.493);
+    z-index: 2;
+    display: none;
+}
+
+.modal__title {
+    display: inline-block;
+    color: #12273C;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 53px;
+    letter-spacing: 0.0022em;
+    text-align: center;
+    padding-top: 64px;
+}
+
+.modal__close-content {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+
+}
+
+.modal__close {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    cursor: pointer;
+}
+
+.modal__users {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.modal__close-line:first-of-type {
+    width: 100%;
+    height: 2px;
+    background: #CCC;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(-45deg);
+}
+
+.modal__close-line:last-of-type {
+    width: 100%;
+    height: 2px;
+    background: #CCC;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotate(45deg);
 }
 
 .more {
@@ -1798,6 +1881,7 @@ body {
     text-align: center;
     border: 1px solid rgba(0, 0, 0, 0.08);
 }
+
 .join-right-btn:hover {
     background: blueviolet;
 }
@@ -1811,15 +1895,18 @@ body {
     .main__join-content {
         flex-direction: column;
     }
+
     .join-left {
         display: block;
         margin: 0 auto;
     }
+
     .join-right {
         width: 70%;
         margin: 0 auto;
         margin-top: 20px;
     }
+
     .join-right-btn {
         width: 50%;
         margin: 0;
@@ -1846,6 +1933,7 @@ body {
         text-align: center;
         margin: 0 auto;
     }
+
     .h1__join-left {
         text-align: center;
     }
@@ -1855,6 +1943,7 @@ body {
     .main__join-content {
         margin-bottom: 100px;
     }
+
     .input-form {
         width: 100%;
     }

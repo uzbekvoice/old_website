@@ -15,6 +15,38 @@ closeList.addEventListener('click', () => {
 
 /* Burger End */
 
+/* Modal start */
+
+const show = document.querySelectorAll('.show-all');
+const modal = document.querySelector('.modal');
+const close = document.querySelector('.modal__close');
+const overlay = document.querySelector('.modal__overlay');
+const body = document.querySelector('body')
+
+show.forEach(item => {
+  item.addEventListener('click', () => {
+    modal.style.display = 'block';
+    overlay.style.display = 'block';
+    body.style.overflow = 'hidden'
+  })
+});
+
+
+
+close.addEventListener('click', () => {
+  modal.style.display = 'none'
+  overlay.style.display = 'none'
+  body.style.overflow = 'scroll'
+
+})
+
+overlay.addEventListener('click', () => {
+  modal.style.display = 'none'
+  overlay.style.display = 'none'
+})
+
+/* Modal end */
+
 $('.slider').slick({
   infinite: true,
   speed: 300,
@@ -22,7 +54,7 @@ $('.slider').slick({
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 2000,
-  speed:500,
+  speed: 500,
   responsive: [
     {
       breakpoint: 1000,
@@ -45,7 +77,7 @@ $('.slider').slick({
         slidesToScroll: 1
       }
     },
-  
+
   ]
 });
 
@@ -56,7 +88,7 @@ $('.slider__works').slick({
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 2000,
-  speed:500,
+  speed: 500,
   responsive: [
     {
       breakpoint: 1000,
@@ -83,7 +115,7 @@ $('.partners__catalog').slick({
   slidesToScroll: 1,
   autoplay: true,
   autoplaySpeed: 2000,
-  speed:500,
+  speed: 500,
   responsive: [
     {
       breakpoint: 1000,
@@ -106,17 +138,17 @@ $('.partners__catalog').slick({
         slidesToScroll: 1
       }
     },
-  
+
   ]
 });
 
 
-$(document).ready(function(){
+$(document).ready(function () {
   function loadLeaderboard(listEl, url) {
-    $.get(url).done(function(data){
+    $.get(url).done(function (data) {
       let block = listEl.find('.leader__wall-info');
       listEl.find('.ajax-loader').hide();
-      data.forEach(function(item, i) {
+      data.forEach(function (item, i) {
         if (i >= 3) return;
         let newBlock = block.clone();
         listEl.append(newBlock);
@@ -133,9 +165,9 @@ $(document).ready(function(){
     const valuesValid = [];
     const chartEl = chartBlockEl.find('canvas');
 
-    $.get(url).done(function(data){
+    $.get(url).done(function (data) {
       chartBlockEl.find('.ajax-loader').hide();
-      data.forEach(function(item, i) {
+      data.forEach(function (item, i) {
         labels.push(moment(item.date).format('ll'));
         valuesTotal.push(Math.round(item.total / 60));
         valuesValid.push(Math.round(item.valid / 60));
@@ -146,41 +178,41 @@ $(document).ready(function(){
       var myChart = new Chart(chartEl[0].getContext('2d'), {
         type: 'line',
         data: {
-            labels: labels,
-            datasets: [{
-                label: 'Tekshirilgan minutlar',
-                data: valuesValid,
-                borderWidth: 2,
-                borderColor: '#33BFFA',
-                backgroundColor: '#E9EDF5',
-                fill: true,
-                cubicInterpolationMode: 'monotone',
-                tension: 0.4
-            }, {
-                label: 'Yozilgan minutlar',
-                data: valuesTotal,
-                borderWidth: 3,
-                borderColor: '#FEB3B4',
-                backgroundColor: '#FDE9EA',
-                fill: true,
-                cubicInterpolationMode: 'monotone',
-                tension: 0.4
-            }]
+          labels: labels,
+          datasets: [{
+            label: 'Tekshirilgan minutlar',
+            data: valuesValid,
+            borderWidth: 2,
+            borderColor: '#33BFFA',
+            backgroundColor: '#E9EDF5',
+            fill: true,
+            cubicInterpolationMode: 'monotone',
+            tension: 0.4
+          }, {
+            label: 'Yozilgan minutlar',
+            data: valuesTotal,
+            borderWidth: 3,
+            borderColor: '#FEB3B4',
+            backgroundColor: '#FDE9EA',
+            fill: true,
+            cubicInterpolationMode: 'monotone',
+            tension: 0.4
+          }]
         },
         options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-              y: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              display: true,
+              title: {
                 display: true,
-                title: {
-                  display: true,
-                  text: 'Minutlar'
-                },
-                suggestedMin: 0,
-                suggestedMax: 10 * 60
-              }
+                text: 'Minutlar'
+              },
+              suggestedMin: 0,
+              suggestedMax: 10 * 60
             }
+          }
         }
       });
 
@@ -200,3 +232,5 @@ $(document).ready(function(){
   drawChart(statsChart, statsURL);
 
 });
+
+
