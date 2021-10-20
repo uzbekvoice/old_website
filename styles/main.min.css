@@ -672,7 +672,6 @@ body {
     padding-bottom: 24px;
 }
 
-.works__slide-item {}
 
 .leader {
     position: relative;
@@ -1736,6 +1735,7 @@ body {
     width: 620px;
 }
 
+
 .join-right {
     background: rgba(255, 255, 255, 0.5);
     border: 1px solid rgba(0, 0, 0, 0.08);
@@ -1796,11 +1796,16 @@ body {
     margin: 0 auto;
     margin-bottom: 25px;
     text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.08);
 }
 .join-right-btn:hover {
     background: blueviolet;
 }
 
+.height {
+    height: 108px;
+    margin-bottom: 32px;
+}
 
 @media (max-width: 1320px) {
     .main__join-content {
