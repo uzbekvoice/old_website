@@ -154,9 +154,9 @@ $(document).ready(function () {
       let block = listEl.find('.leader__wall-info');
       listEl.find('.ajax-loader').hide();
       data.forEach(function (item, i) {
-        if (i >= 3) return;
         let newBlock = block.clone();
         listEl.append(newBlock);
+        newBlock.find('.leaderboard-number').text(i+1 + '.');
         newBlock.find('.leaderboard-username').text(item.username);
         newBlock.find('.leaderboard-total').text(item.total);
         newBlock.show();
@@ -174,18 +174,30 @@ $(document).ready(function () {
       chartBlockEl.find('.ajax-loader').hide();
       data.forEach(function (item, i) {
         labels.push(moment(item.date).format('ll'));
-        valuesTotal.push(Math.round(item.total / 60));
-        valuesValid.push(Math.round(item.valid / 60));
+        valuesTotal.push(parseFloat(item.total / 60 / 60).toFixed(1));
+        valuesValid.push(parseFloat(item.valid / 60 / 60).toFixed(1));
       });
 
       chartEl.show();
+
+      const annotation1 = {
+        type: 'line',
+        scaleID: 'x',
+        borderWidth: 3,
+        borderColor: 'black',
+        value: 5,
+        label: {
+          content: 'Line annotation at x=0.5',
+          enabled: true
+        },
+      };
 
       var myChart = new Chart(chartEl[0].getContext('2d'), {
         type: 'line',
         data: {
           labels: labels,
           datasets: [{
-            label: 'Tekshirilgan minutlar',
+            label: 'Tekshirilgan soatlar',
             data: valuesValid,
             borderWidth: 2,
             borderColor: '#33BFFA',
@@ -194,7 +206,7 @@ $(document).ready(function () {
             cubicInterpolationMode: 'monotone',
             tension: 0.4
           }, {
-            label: 'Yozilgan minutlar',
+            label: 'Yozilgan soatlar',
             data: valuesTotal,
             borderWidth: 3,
             borderColor: '#FEB3B4',
@@ -212,12 +224,19 @@ $(document).ready(function () {
               display: true,
               title: {
                 display: true,
-                text: 'Minutlar'
+                text: 'Soatlar'
               },
               suggestedMin: 0,
-              suggestedMax: 10 * 60
+              suggestedMax: 10
             }
-          }
+          },
+          plugins: {
+            annotation: {
+              annotations: {
+                annotation1
+              }
+            }
+          },
         }
       });
 
@@ -231,6 +250,10 @@ $(document).ready(function () {
   const leaderboardVotes = $('.leaderboard-list-votes');
   const leaderboardVotesURL = 'https://api.ry.team/leaderboard/votes';
   loadLeaderboard(leaderboardVotes, leaderboardVotesURL);
+
+  const leaderboardClipsAll = $('.leaderboard-list-clips-all');
+  const leaderboardClipsURLAll = 'https://api.ry.team/leaderboard/clips/all';
+  loadLeaderboard(leaderboardClipsAll, leaderboardClipsURLAll);
 
   const statsChart = $('.stats-datechart');
   const statsURL = 'https://api.ry.team/stats/clips';
