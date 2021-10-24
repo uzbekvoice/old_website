@@ -164,6 +164,9 @@ $(document).ready(function () {
     })
   }
 
+  let latestTotalVoices = 0;
+  let latestValidVoices = 0;
+
   function drawChart(chartBlockEl, url) {
     const labels = [];
     const valuesTotal = [];
@@ -174,23 +177,13 @@ $(document).ready(function () {
       chartBlockEl.find('.ajax-loader').hide();
       data.forEach(function (item, i) {
         labels.push(moment(item.date).format('ll'));
-        valuesTotal.push(parseFloat(item.total / 60 / 60).toFixed(1));
-        valuesValid.push(parseFloat(item.valid / 60 / 60).toFixed(1));
+        latestTotalVoices = parseFloat(item.total / 60 / 60).toFixed(1);
+        latestValidVoices = parseFloat(item.valid / 60 / 60).toFixed(1)
+        valuesTotal.push(latestTotalVoices);
+        valuesValid.push(latestValidVoices);
       });
 
       chartEl.show();
-
-      const annotation1 = {
-        type: 'line',
-        scaleID: 'x',
-        borderWidth: 3,
-        borderColor: 'black',
-        value: 5,
-        label: {
-          content: 'Line annotation at x=0.5',
-          enabled: true
-        },
-      };
 
       var myChart = new Chart(chartEl[0].getContext('2d'), {
         type: 'line',
@@ -230,11 +223,87 @@ $(document).ready(function () {
               suggestedMax: 10
             }
           },
+        }
+      });
+
+    });
+  }
+
+  function drawStatChart(chartBlockEl, url) {
+    const values = [];
+    const chartEl = chartBlockEl.find('canvas');
+
+    $.get(url).done(function (data) {
+      chartBlockEl.find('.ajax-loader').hide();
+      values.push(parseFloat(data.all.uz.added / 900).toFixed(1));
+      values.push(parseFloat(data.all.uz.validated / 900).toFixed(1));
+      values.push(latestTotalVoices);
+      values.push(latestValidVoices);
+
+      chartEl.show();
+
+      const labels = [
+        'Sharhdagi jumlalar',
+        'Tegishli jumlalar ',
+        'Takliflar bildirildi',
+        'Ovozli takliflar tekshirildi'
+      ];
+
+      const annotateLabels = [
+        [2000, "Odamga yaqin ASR umumiy aniqligi (tilga bog'liq)"],
+        [300, "Cheklangan so'z boyligi doimiy nutqni aniqlash"],
+        [10, "Buyruqlarga asoslangan modellar"],
+      ];
+      var annotations = [];
+      annotateLabels.forEach(function(item) {
+        annotations.push({
+          type: 'line',
+          scaleID: 'y',
+          borderWidth: 1,
+          borderColor: '#92959E',
+          borderDash: [3, 3],
+          value: item[0],
+          label: {
+            content: item[1],
+            backgroundColor: 'rgb(255,255,255)',
+            color: '#92959E',
+            font: {'style': 'normal'},
+            enabled: true
+          },
+        });
+      });
+
+
+      var myChart = new Chart(chartEl[0].getContext('2d'), {
+        type: 'bar',
+        data: {
+          labels: labels,
+          datasets: [{
+            label: "Joriy holat (tovushli soat)",
+            data: values,
+            borderWidth: 2,
+            borderColor: '#33BFFA',
+            tension: 0.4
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              display: true,
+              title: {
+                display: true,
+                text: 'Soatlar'
+              },
+              type: 'logarithmic',
+              suggestedMin: 0,
+              suggestedMax: 11000
+            }
+          },
           plugins: {
             annotation: {
-              annotations: {
-                annotation1
-              }
+              annotations: annotations
             }
           },
         }
@@ -258,6 +327,10 @@ $(document).ready(function () {
   const statsChart = $('.stats-datechart');
   const statsURL = 'https://api.ry.team/stats/clips';
   drawChart(statsChart, statsURL);
+
+  const statsChartTxt = $('.stats-datechart-txt');
+  const statsURLTxt = 'https://api.ry.team/stats/texts';
+  drawStatChart(statsChartTxt, statsURLTxt);
 
 });
 
