@@ -18,30 +18,43 @@ closeList.addEventListener('click', () => {
 /* Modal start */
 
 const show = document.querySelectorAll('.show-all');
+const secondShow = document.querySelector('.second-show-all');
 const modal = document.querySelector('.modal');
-const close = document.querySelector('.modal__close');
+const secondModal = document.querySelector('.second-modal')
+const close = document.querySelectorAll('.modal__close');
 const overlay = document.querySelector('.modal__overlay');
 const body = document.querySelector('body')
+
+
+
 
 show.forEach(item => {
   item.addEventListener('click', () => {
     modal.style.display = 'block';
     overlay.style.display = 'block';
-    body.style.overflow = 'hidden'
   })
 });
 
-
-
-close.addEventListener('click', () => {
-  modal.style.display = 'none'
-  overlay.style.display = 'none'
-  body.style.overflow = 'scroll'
-
+secondShow.addEventListener('click', () => {
+  secondModal.style.display = 'block';
+  overlay.style.display = 'block';
 })
+
+close.forEach(block => {
+  block.addEventListener('click', () => {
+    modal.style.display = 'none'
+    secondModal.style.display = 'none'
+    overlay.style.display = 'none'
+  })
+})
+
+
+
+
 
 overlay.addEventListener('click', () => {
   modal.style.display = 'none'
+  secondModal.style.display = 'none'
   overlay.style.display = 'none'
 })
 

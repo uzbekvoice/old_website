@@ -725,7 +725,11 @@ body {
 }
 
 .leader__wall-right {
-    margin-left: 30px
+    margin-left: 30px;
+    width: 517px
+}
+.leader__wall-left {
+    width: 517px;
 }
 
 .leader__wall-h3 {
@@ -734,6 +738,7 @@ body {
     line-height: 32px;
     color: #374151
 }
+
 
 .leaderboard-list {
     min-height: 100px;
@@ -754,8 +759,8 @@ body {
     font-size: 18px;
     font-weight: 400;
     line-height: 32px;
-    color: #626364
-}
+    }
+
 
 .leader__wall-block img {
     width: 72px;
@@ -769,7 +774,7 @@ body {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    width: 512px;
+    width: 100%;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
@@ -781,14 +786,22 @@ body {
     -webkit-backdrop-filter: blur(80px);
     backdrop-filter: blur(80px);
     border-radius: 24px;
-    padding: 16px 24px 16px 16px
+    padding: 16px 24px 16px 16px;
+    transition: 0.5s;
+    color: #626364
+
 }
+
+.leader__wall-info:hover {
+    background: #374151;
+    color: white;
+}
+
 
 .leader__wall-info span {
     font-size: 18px;
     font-weight: 400;
     line-height: 32px;
-    color: #626364
 }
 
 .show-all {
@@ -813,6 +826,41 @@ body {
     cursor: pointer;
 }
 
+.second-show-all {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #8D53FD;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0.0043em;
+    text-align: left;
+    margin-top: 32px;
+    margin-bottom: 220px;
+    -webkit-transition: color 0.5s ease;
+    -o-transition: color 0.5s ease;
+    transition: color 0.5s ease;
+    cursor: pointer;
+}
+.second-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    background: #fff;
+    height: 810px;
+    width: 964px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 6px;
+    display: none;
+}
 .modal {
     position: absolute;
     top: 50%;
@@ -855,8 +903,8 @@ body {
     display: flex;
     justify-content: flex-end;
     position: absolute;
-    top: 30px;
-    right: 10px;
+    top: 100px;
+    right: 30px;
 
 }
 
