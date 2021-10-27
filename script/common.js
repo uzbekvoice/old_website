@@ -337,6 +337,10 @@ $(document).ready(function () {
   const leaderboardClipsURLAll = 'https://api.ry.team/leaderboard/clips/all';
   loadLeaderboard(leaderboardClipsAll, leaderboardClipsURLAll);
 
+  const leaderboardVotesAll = $('.leaderboard-list-votes-all');
+  const leaderboardVotesURLAll = 'https://api.ry.team/leaderboard/votes/all';
+  loadLeaderboard(leaderboardVotesAll, leaderboardVotesURLAll);
+
   const statsChart = $('.stats-datechart');
   const statsURL = 'https://api.ry.team/stats/clips';
   drawChart(statsChart, statsURL);
