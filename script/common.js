@@ -282,7 +282,7 @@ $(document).ready(function () {
       //values.push(data.all.uz.added);
       //values.push(data.all.uz.validated);
 
-      let img = chartBlockEl.find('.svgTxtStat').show().contents();
+      let img = chartBlockEl.find('.svgTxtStat').contents();
 
       img.find('#ActualStatMatnNumber').text(data.all.uz.added.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '));
       img.find('#ActualStatHourNumber').text(
