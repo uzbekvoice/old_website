@@ -537,7 +537,6 @@ body {
 }
 
 .statistic__img-file canvas,
-.statistic__img-file object,
 .statistic__img-file img {
     height: 100%;
     width: 100%;
@@ -879,9 +878,9 @@ body {
 
 .modal__overlay {
     position: absolute;
-    top: -50%;
+    top: -250%;
     left: 0;
-    bottom: -50%;
+    bottom: -446%;
     right: 0;
     background: rgba(128, 128, 128, 0.493);
     z-index: 2;
