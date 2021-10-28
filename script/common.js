@@ -186,6 +186,31 @@ $(document).ready(function () {
     const valuesValid = [];
     const chartEl = chartBlockEl.find('canvas');
 
+    const annotateLabels = [
+      [10000, "Juda yuqori sifatli, katta lug'at, uzluksiz nutqni aniqlash modeli"],
+      [2000, "Odamga yaqin ASR umumiy aniqligi (tilga bog'liq)"],
+      [300, "Cheklangan so'z boyligi doimiy nutqni aniqlash"],
+      [10, "Buyruqlarga asoslangan modellar"],
+    ];
+    var annotations = [];
+    annotateLabels.forEach(function(item) {
+      annotations.push({
+        type: 'line',
+        scaleID: 'y',
+        borderWidth: 1,
+        borderColor: '#92959E',
+        borderDash: [3, 3],
+        value: item[0],
+        label: {
+          content: item[1],
+          backgroundColor: 'rgb(255,255,255)',
+          color: '#92959E',
+          font: {'style': 'normal'},
+          enabled: true
+        },
+      });
+    });
+
     $.get(url).done(function (data) {
       chartBlockEl.find('.ajax-loader').hide();
       data.forEach(function (item, i) {
@@ -232,10 +257,16 @@ $(document).ready(function () {
                 display: true,
                 text: 'Soatlar'
               },
+              type: 'logarithmic',
               suggestedMin: 0,
-              suggestedMax: 10
+              suggestedMax: 11000
             }
           },
+          plugins: {
+            annotation: {
+              annotations: annotations
+            }
+          }
         }
       });
 
@@ -248,43 +279,24 @@ $(document).ready(function () {
 
     $.get(url).done(function (data) {
       chartBlockEl.find('.ajax-loader').hide();
-      values.push(parseFloat(data.all.uz.added / 900).toFixed(1));
-      values.push(parseFloat(data.all.uz.validated / 900).toFixed(1));
+      values.push(data.all.uz.added);
+      //values.push(data.all.uz.validated);
       values.push(latestTotalVoices);
-      values.push(latestValidVoices);
+      //values.push(latestValidVoices);
+
+      values.push(270000);
+      values.push(900000);
+      values.push(1800000);
 
       chartEl.show();
 
       const labels = [
-        'Sharhdagi jumlalar',
-        'Tegishli jumlalar ',
-        'Takliflar bildirildi',
-        'Ovozli takliflar tekshirildi'
+        'Joriy holat',
+        'x1',
+        'x2',
+        'x3',
+        'x4'
       ];
-
-      const annotateLabels = [
-        [2000, "Odamga yaqin ASR umumiy aniqligi (tilga bog'liq)"],
-        [300, "Cheklangan so'z boyligi doimiy nutqni aniqlash"],
-        [10, "Buyruqlarga asoslangan modellar"],
-      ];
-      var annotations = [];
-      annotateLabels.forEach(function(item) {
-        annotations.push({
-          type: 'line',
-          scaleID: 'y',
-          borderWidth: 1,
-          borderColor: '#92959E',
-          borderDash: [3, 3],
-          value: item[0],
-          label: {
-            content: item[1],
-            backgroundColor: 'rgb(255,255,255)',
-            color: '#92959E',
-            font: {'style': 'normal'},
-            enabled: true
-          },
-        });
-      });
 
 
       var myChart = new Chart(chartEl[0].getContext('2d'), {
@@ -292,7 +304,7 @@ $(document).ready(function () {
         data: {
           labels: labels,
           datasets: [{
-            label: "Joriy holat (tovushli soat)",
+            label: "",
             data: values,
             borderWidth: 2,
             borderColor: '#33BFFA',
@@ -307,18 +319,12 @@ $(document).ready(function () {
               display: true,
               title: {
                 display: true,
-                text: 'Soatlar'
+                text: 'Jumlalar'
               },
-              type: 'logarithmic',
               suggestedMin: 0,
-              suggestedMax: 11000
+              suggestedMax: 300000
             }
-          },
-          plugins: {
-            annotation: {
-              annotations: annotations
-            }
-          },
+          }
         }
       });
 
