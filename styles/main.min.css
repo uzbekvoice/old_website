@@ -537,6 +537,7 @@ body {
 }
 
 .statistic__img-file canvas,
+.statistic__img-file object,
 .statistic__img-file img {
     height: 100%;
     width: 100%;
