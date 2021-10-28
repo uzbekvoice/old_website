@@ -189,8 +189,8 @@ $(document).ready(function () {
     const annotateLabels = [
       [10000, "Juda yuqori sifatli, katta lug'at, uzluksiz nutqni aniqlash modeli"],
       [2000, "Odamga yaqin ASR umumiy aniqligi (tilga bog'liq)"],
-      [300, "Cheklangan so'z boyligi doimiy nutqni aniqlash"],
-      [10, "Buyruqlarga asoslangan modellar"],
+      [500, "Cheklangan so'z boyligi doimiy nutqni aniqlash"],
+      [100, "Buyruqlarga asoslangan modellar"],
     ];
     var annotations = [];
     annotateLabels.forEach(function(item) {
@@ -216,7 +216,7 @@ $(document).ready(function () {
       data.forEach(function (item, i) {
         labels.push(moment(item.date).format('ll'));
         latestTotalVoices = parseFloat(item.total / 60 / 60).toFixed(1);
-        latestValidVoices = parseFloat(item.valid / 60 / 60).toFixed(1)
+        latestValidVoices = parseFloat(item.valid / 60 / 60).toFixed(1);
         valuesTotal.push(latestTotalVoices);
         valuesValid.push(latestValidVoices);
       });
@@ -274,60 +274,19 @@ $(document).ready(function () {
   }
 
   function drawStatChart(chartBlockEl, url) {
-    const values = [];
+    //const values = [];
     const chartEl = chartBlockEl.find('canvas');
 
     $.get(url).done(function (data) {
       chartBlockEl.find('.ajax-loader').hide();
-      values.push(data.all.uz.added);
+      //values.push(data.all.uz.added);
       //values.push(data.all.uz.validated);
-      values.push(latestTotalVoices);
-      //values.push(latestValidVoices);
 
-      values.push(270000);
-      values.push(900000);
-      values.push(1800000);
+      let img = chartBlockEl.find('.svgTxtStat').contents();
 
-      chartEl.show();
-
-      const labels = [
-        'Joriy holat',
-        'x1',
-        'x2',
-        'x3',
-        'x4'
-      ];
-
-
-      var myChart = new Chart(chartEl[0].getContext('2d'), {
-        type: 'bar',
-        data: {
-          labels: labels,
-          datasets: [{
-            label: "",
-            data: values,
-            borderWidth: 2,
-            borderColor: '#33BFFA',
-            tension: 0.4
-          }]
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          scales: {
-            y: {
-              display: true,
-              title: {
-                display: true,
-                text: 'Jumlalar'
-              },
-              suggestedMin: 0,
-              suggestedMax: 300000
-            }
-          }
-        }
-      });
-
+      img.find('#ActualStatMatnNumber').text(data.all.uz.added.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '));
+      img.find('#ActualStatHourNumber').text(
+        parseFloat(data.all.uz.added / 900).toFixed(0) + ' soat ovoz');
     });
   }
 
