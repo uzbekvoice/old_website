@@ -74,7 +74,8 @@ ul {
 }
 
 body {
-    font-family: "Objektiv"
+    font-family: "Objektiv";
+    position: relative;
 }
 
 .icon__tick::before {
@@ -878,9 +879,9 @@ body {
 
 .modal__overlay {
     position: absolute;
-    top: -250%;
+    top: 0;
     left: 0;
-    bottom: -446%;
+    bottom: 0;
     right: 0;
     background: rgba(128, 128, 128, 0.493);
     z-index: 2;
