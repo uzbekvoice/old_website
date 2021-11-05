@@ -1062,12 +1062,14 @@ body {
 
 .partners__catalog img {
     width: 300px;
+    height: 300px;
     display: inline;
     filter: grayscale();
     transition: all 500ms;
-    height: 300px;
 }
+
 .partners__img {
+    width: 200px  !important ;
     object-fit: contain;
 }
 
