@@ -1065,6 +1065,10 @@ body {
     display: inline;
     filter: grayscale();
     transition: all 500ms;
+    height: 300px;
+}
+.partners__img {
+    object-fit: contain;
 }
 
 .partners__catalog img:hover {
@@ -1116,7 +1120,6 @@ body {
     margin: 0px 0px 0.66667em 0px;
     width: 270px
 }
-
 .footer__logo2 {
     margin: 0px 0px 0.66667em 0px;
     width: 220px
