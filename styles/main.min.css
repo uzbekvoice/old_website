@@ -537,7 +537,7 @@ body {
     border: 2px solid rgba(238, 231, 231, 0.8);
 }
 
-.statistic__img-file canvas,
+.statistic__img-file object,
 .statistic__img-file img {
     height: 100%;
     width: 100%;
