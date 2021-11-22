@@ -284,14 +284,14 @@ $(document).ready(function () {
 
       let img = chartBlockEl.find('.svgTxtStat').contents();
 
-      img.find('#ActualStatMatnNumber').text(data.all.uz.added.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '));
+      img.find('#ActualStatMatnNumber').text(data.all.uz.validated.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' '));
       img.find('#ActualStatHourNumber').text(
-        parseFloat(data.all.uz.added / 900).toFixed(0) + ' soat ovoz');
-      img.find('#ActualStatRect').attr('height', data.all.uz.added/10000);
-      img.find('#ActualStatRect').attr('y', 332 - (data.all.uz.added/10000));
-      img.find('#ActualStatMatnNumber').attr('y', 285 - (data.all.uz.added/10000));
-      img.find('#ActualStatMatnNumberSpan').attr('y', 300 - (data.all.uz.added/10000));
-      img.find('#ActualStatHourNumber').attr('y', 319 - (data.all.uz.added/10000));
+        parseFloat(data.all.uz.validated / 900).toFixed(0) + ' soat ovoz');
+      img.find('#ActualStatRect').attr('height', data.all.uz.validated/10000);
+      img.find('#ActualStatRect').attr('y', 332 - (data.all.uz.validated/10000));
+      img.find('#ActualStatMatnNumber').attr('y', 285 - (data.all.uz.validated/10000));
+      img.find('#ActualStatMatnNumberSpan').attr('y', 300 - (data.all.uz.validated/10000));
+      img.find('#ActualStatHourNumber').attr('y', 319 - (data.all.uz.validated/10000));
     });
   }
 
