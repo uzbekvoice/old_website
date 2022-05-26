@@ -1,116 +1,109 @@
-.container {
-  padding: 0 2rem;
+.header__content {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 150px
 }
 
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.header__content::before {
+    content: '';
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 133, 255, 0.58)), to(rgba(173, 0, 255, 0.11)));
+    background: -o-linear-gradient(top, rgba(0, 133, 255, 0.58) 0%, rgba(173, 0, 255, 0.11) 100%);
+    background: linear-gradient(180deg, rgba(0, 133, 255, 0.58) 0%, rgba(173, 0, 255, 0.11) 100%);
+    -webkit-filter: blur(100px);
+    filter: blur(100px);
+    position: absolute;
+    top: -5%;
+    right: 0%;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    z-index: -5
 }
 
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
+.header__content_text {
+    color: #12273C
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+.header__content h1 {
+    font-size: 48px;
+    line-height: 53px;
+    width: 585px;
+    font-weight: 900
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.header__content p {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    margin-top: 12px;
+    margin-bottom: 32px
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
+.header__content_block a {
+    color: white;
+    padding: 16px 24px;
+    background: linear-gradient(9deg, #8D53FD -1.4%, #B38CFF 95.18%),
+        linear-gradient(0deg, #8D53FD, #8D53FD);
+    box-shadow: 0px 8px 32px rgba(141, 83, 253, 0.24);
+    border-radius: 12px;
+    font-size: 22px
 }
 
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+.header__content a:hover {
+    background: blueviolet
 }
 
-.title,
-.description {
-  text-align: center;
+.header__content_info  {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
 }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
+.header__content_block {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+.header__content img {
+    width: 23px;
+    height: 19px;
+    margin-left: 28px
 }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+.header__content video {
+    width: 620px;
+    margin-left: 50px;
+    border-radius: 20px;
 }
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+.header__content_info a {
+    color: #33BFFA;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.0043em;
+    margin-left: 10px;
+    transition: color 500ms ease;
+    background: transparent!important;
+    box-shadow: 0px 0px 0px 0px!important;
+    padding: 0;
+    border-radius: 0px!important;
+   
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
-}
-
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+.header__content-btn:hover {
+    color: #055d83;
 }
