@@ -1,0 +1,41 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.item.active{
+  color: #8D53FD;
+}
+
+.container__fluid {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 86px;
+
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.btn {
+  background-color: #8D53FD;
+  padding: 13px 24px;
+  color: white!important;
+  border-radius: 12px;
+}

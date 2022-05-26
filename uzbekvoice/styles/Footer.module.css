@@ -1,0 +1,134 @@
+
+
+.footer {
+    margin-top: 250px;
+
+    background: #F5F8FA;
+   
+}
+
+.footer__body {
+    
+    padding-top: 80px;
+    padding-bottom: 60px;
+    -webkit-column-gap: 80px;
+    -moz-column-gap: 80px;
+    column-gap: 80px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.footer__main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start
+}
+
+.footer__main h3 {
+    margin-top: 40px
+}
+
+.footer__logo {
+    margin: 0px 0px 0.66667em 0px;
+    width: 270px
+}
+.footer__logo2 {
+    margin: 0px 0px 0.66667em 0px;
+    width: 220px
+}
+
+.footer__menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    width: 100%
+}
+
+.footer .contacts-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    margin-left: 5px
+}
+
+.footer .contacts-footer__item {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    line-height: 150%;
+    color: grey;
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s
+}
+
+.footer .menu_footer__title {
+    cursor: default
+}
+
+.menu_footer li {
+    margin: 0 0 20px 0;
+    list-style: none;
+}
+
+.menu_footer li :hover {
+    color: orange
+}
+
+.menu_footer a {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #919293;
+}
+
+.menu_footer a{
+    display: flex;
+    align-items: top;
+}
+
+.menu_footer img {
+    width: 24px;
+    height: 25px
+}
+
+ .menu_footer span {
+    margin-left: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #12273C
+}
+
+.footer .menu_footer-info-first {
+    margin-left: 8px
+}
+
+.footer h3 {
+    text-align: center;
+    padding-bottom: 32px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    color: #919293;
+    margin: 0;
+}
